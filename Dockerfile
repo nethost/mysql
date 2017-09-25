@@ -1,12 +1,9 @@
-FROM alpine:3.6
+FROM nethost/alpine:3.6
 MAINTAINER Billgo <cocobill@vip.qq.com>
 
 RUN apk update && \
-    apk add --no-cache ca-certificates && \
+    apk add --no-cache && \
     apk add mysql mysql-client && \
-    apk add tzdata && \
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo "Asia/Shanghai" > /etc/timezone && \ 
     addgroup mysql mysql && \
     mkdir /scripts && \
     rm -rf /var/cache/apk/*
