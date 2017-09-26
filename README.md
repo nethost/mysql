@@ -22,3 +22,12 @@ $ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3306:
 ```
 $ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=billgo -e MYSQL_PASSWORD=123456 -e MYSQL_DATABASE=default nethost/mysql:5.7
 ```
+
+## 辅助命令
+```
+$ docker ps -l
+$ docker stop $(docker ps -a -q)
+$ docker rm $(docker ps -a -q)
+$ docker rmi $(docker images -q)
+$ docker rmi $(docker images -q -f dangling=true)
+```
