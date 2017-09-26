@@ -20,7 +20,7 @@ $ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3306:
 
 #### Run a container with new Database for new User and Password
 ```
-$ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=billgo -e MYSQL_PASSWORD=123456 -e MYSQL_DATABASE=default nethost/mysql:5.7
+$ docker run --name mysql -v /Users/Billgo/data/mysql:/var/lib/mysql -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=billgo -e MYSQL_PASSWORD=123456 -e MYSQL_DATABASE=default nethost/mysql:5.7
 ```
 
 ## 辅助命令
