@@ -1,6 +1,6 @@
 # Mysql Docker Images
 
-Docker + Alpine + Mysql5.7
+Docker + Alpine3.6 + Mysql5.7
 
 #### Parameter
 - `MYSQL_USER` : new User
