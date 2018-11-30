@@ -7,6 +7,10 @@
 $ docker build -t=nethost/mysql:5.7-debian .
 $ docker push nethost/mysql:5.7-debian
 $ docker pull nethost/mysql:5.7-debian
+
+$ docker build -t=nethost/mysql:5.7-alpine .
+$ docker push nethost/mysql:5.7-alpine
+$ docker pull nethost/mysql:5.7-alpine
 ```
 
 ### 5.6
