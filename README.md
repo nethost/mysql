@@ -1,33 +1,35 @@
-# Mysql Docker Images
+# MySQL Images
 
-Docker + Alpine3.6 + Mysql5.7
+## Version
 
-#### Parameter
-- `MYSQL_USER` : new User
-- `MYSQL_PASSWORD` : new User Password
-- `MYSQL_DATABASE` : new Database for new User
-- `MYSQL_ROOT_PASSWORD` : root Password default "mysql"
-
-#### Run a default container
+### 5.7
 ```
-$ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3306:3306 nethost/mysql
+$ docker build -t=bridge5/mysql:5.7-debian .
+$ docker push bridge5/mysql:5.7-debian
+$ docker pull bridge5/mysql:5.7-debian
 ```
 
-#### Run a container with new User and Password
+### 5.6
 ```
-$ docker run --name mysql -v /Users/billgo/data/mysql:/var/lib/mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=billgo -e MYSQL_PASSWORD=123456 nethost/mysql
-```
-
-#### Run a container with new Database for new User and Password
-```
-$ docker run --name mysql -v /Users/Billgo/data/mysql:/var/lib/mysql -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=billgo -e MYSQL_PASSWORD=123456 -e MYSQL_DATABASE=default nethost/mysql:5.7
+$ docker build -t=bridge5/mysql:5.6-debian .
+$ docker push bridge5/mysql:5.6-debian
+$ docker pull bridge5/mysql:5.6-debian
 ```
 
-## 辅助命令
+### 5.5
 ```
-$ docker ps -l
-$ docker stop $(docker ps -a -q)
-$ docker rm $(docker ps -a -q)
-$ docker rmi $(docker images -q)
-$ docker rmi $(docker images -q -f dangling=true)
+$ docker build -t=bridge5/mysql:5.5-debian .
+$ docker push bridge5/mysql:5.5-debian
+$ docker pull bridge5/mysql:5.5-debian
 ```
+
+## How to use this image ?
+
+### Start a mysql server instance
+
+```
+$ docker run --name some-mysql -p 3309:3306 -e MYSQL_ROOT_PASSWORD=1014 -d bridge5/mysql:5.7-debian
+```
+where some-mysql is the name you want to assign to your container, my-secret-pw is the password to be set for the MySQL root user and tag is the tag specifying the MySQL version you want. See the list above for relevant tags.
+
+
